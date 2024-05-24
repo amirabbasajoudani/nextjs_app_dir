@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./styles.css";
 import Link from "next/link";
+import GoogleAnalytics from "./providers/google_analytics";
 
 export const metadata: Metadata = {
   title: "Read Only Blog",
@@ -37,7 +38,10 @@ export default function RootLayout({
           </ul>
         </nav>
         {/* <div>{users}</div> */}
-        <div className="container">{children}</div>
+        <div className="container">
+          <GoogleAnalytics />
+          {children}
+        </div>
       </body>
     </html>
   );
